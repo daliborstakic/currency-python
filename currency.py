@@ -22,4 +22,13 @@ class Currency:
             amount /= self.rates[from_c]
         
         # Applying the actual rate
-        amount.round(amount * self.rates[to_c])
+        amount = round(amount * self.rates[to_c], 2)
+
+def main():
+    # API Access key
+    url = "http://data.fixer.io/api/latest?access_key=864a1bd5385ffa5b3c62b559b5d73aa5&format=1"
+
+    c = Currency(url)
+
+if __name__ == "__main__":
+    main()
